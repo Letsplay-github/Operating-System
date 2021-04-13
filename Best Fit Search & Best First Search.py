@@ -89,17 +89,14 @@ else:
         for j in range(0,len(mem2),1):
             if mem2[j].status== True:#true is available
                 if jobs2[k].size<=mem2[j].size:
-                #   if jobs[i].location == None:
                     jobs2[k].setlocation(j)
                     break
-                #   elif mem[jobs[i].location].size > mem[j].size:
-                #       jobs[i].setlocation(j)
 
         if jobs2[k].location != None:
             mem2[jobs2[k].location].setjob(jobs2[k])
             mem2[jobs2[k].location].setstatus(False)
         else:
-            print("    not enought memory for "+jobs2[k].jobname)
+            print("    not enough memory for "+jobs2[k].jobname)
 
 print("\nInside Memory\n")
 print(" block    size    jobs     used    unused")
